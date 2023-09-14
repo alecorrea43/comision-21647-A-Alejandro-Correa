@@ -9,6 +9,7 @@ const sequelize = new Sequelize(dbName,dbUserName,dbPassword,{
     host: 'localhost',
     dialect:'mysql'
 });
+//constante dbtest para poder conectar la base de taros a otro archivo
 const DBTest = async () => {
 try {
     await sequelize.authenticate();
