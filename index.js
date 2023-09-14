@@ -7,7 +7,10 @@ const foroModel = require('./foroModel.js');
 let app = express();
 const PUERTO = process.env.PUERTO;
 app.set("view engine", "ejs");
+//express static es necesario para poder usar un archivo css
 app.use(express.static(__dirname + '/public'));
+//las politicas de helmet no dejan ver imagenes
+//entonces le doy permisos con este codigo
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
