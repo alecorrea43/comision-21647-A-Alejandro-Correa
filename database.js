@@ -1,9 +1,9 @@
+//libreria
 const {Sequelize}= require('sequelize');
-
+//constantes que hacen referencia a la base de datos
 const dbName = process.env.DB_NAME
 const dbUserName = process.env.DB_USERNAME
 const dbPassword = process.env.DB_PASSWORD
-
 
 const sequelize = new Sequelize(dbName,dbUserName,dbPassword,{
     host: 'localhost',
