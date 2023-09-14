@@ -1,11 +1,4 @@
 
-.contenedor{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 th{
     white-space:nowrap;
   }
@@ -14,3 +7,10 @@ th{
     height: 400px;
     
   }
+  @media (max-width: 768px) {
+    table th:nth-child(1),
+    table td:nth-child(1) {
+      display: none;
+    }
+  }
+  

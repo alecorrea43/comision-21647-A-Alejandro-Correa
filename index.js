@@ -8,9 +8,18 @@ let app = express();
 const PUERTO = process.env.PUERTO;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: ["'self'", '*'],
+    },
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 //function asyncrona de incio
 app.get("/", async function (req, res) {
 const publi = await foroModel.findAll();
@@ -87,29 +96,30 @@ app.get('/editar/:id', async function (req, res) {
 //funcion de editar que .post para que envia los datos y no se vean 
 //redirecciona al inicio
 app.post('/editar/:id', async function (req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
   const { nombrePublicacion, redactarPublicacion, agregarImg } = req.body;
 
-  try{
-    const editActualizado = await foroModel.update(
-      {
-       autor: nombrePublicacion,
-       publicacion:redactarPublicacion,
-       img:agregarImg,
-      },{
-      where:{
-        id:id
+  try {
+    // Encuentra la publicación existente por su ID
+    const edit = await foroModel.findOne({
+      where: {
+        id: id
       }
-    })
-    if(editActualizado){ 
+    });
+
+    if (edit) {
+      // Actualiza los campos de la publicación con los valores del formulario
+      edit.autor = nombrePublicacion;
+      edit.publicacion = redactarPublicacion;
+      edit.img = agregarImg; // Aquí estableces la URL de la imagen ingresada por el usuario
+      await edit.save(); // Guarda los cambios en la base de datos
       res.redirect('/');
-    }else{
-      res.send('no se encontro la tarea')
+    } else {
+      res.send('No se encontró la publicación');
     }
-  }catch(err){
-    res.send('se produjo un error al subir la tarea' +err)
+  } catch (err) {
+    res.send('Se produjo un error al editar la publicación: ' + err);
   }
-  
 });
 
 
