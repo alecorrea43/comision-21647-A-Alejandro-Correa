@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+<body>
+  <div style="padding: 50px;">
+    <br>
+    <br>
+   <div class="card">
+    <div class="card-header">
+     Editar Publicacion: <%=edit.id%>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        <div class="mb-3">
+          <label for="nombrePublicacion" class="form-label">Nombre de la publicacion</label>
+          <input type="text" class="form-control" id="nombrePublicacion" name="nombrePublicacion" value="<%=edit.autor%>">
+        </div>
+        <div class="mb-3">
+          <label for="redactarPublicacion" class="form-label">Redactar</label>
+          <input type="text" class="form-control" id="redactarPublicacion" name="redactarPublicacion" value="<%=edit.publicacion%>">
+        </div>
+        <div class="mb-3">
+          <label for="agregarImg" class="form-label">Url imagen</label>
+          <input type="url" class="form-control" id="redactarPublicacion" name="agregarImg" value="<%=edit.img%>">
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+    </div>
+    <img src="<%=edit.img%>" alt="">
+   </div>
+  </div>
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
