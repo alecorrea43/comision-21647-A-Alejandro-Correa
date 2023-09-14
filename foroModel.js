@@ -10,10 +10,13 @@ autor:{
     type: DataTypes.STRING,
    
   },
-  img:{
-    type: DataTypes.STRING,
-   
-  }
+
+fecha:{
+  type: DataTypes.STRING,
+},
+
+ 
+  
 }, {
    timestamps:false,
     tableName:'foro',

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2023 a las 06:08:24
+-- Tiempo de generación: 14-09-2023 a las 17:00:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -32,20 +32,16 @@ CREATE TABLE `foro` (
   `autor` varchar(150) NOT NULL,
   `publicacion` varchar(1000) NOT NULL,
   `img` varchar(300) NOT NULL,
-  `Fecha` datetime NOT NULL DEFAULT current_timestamp()
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `foro`
 --
 
-INSERT INTO `foro` (`id`, `autor`, `publicacion`, `img`, `Fecha`) VALUES
-(10, 'prueba 2', 'asdadadsads', 'aasdasd111', '2023-09-13 00:00:00'),
-(11, 'asdadasdasd123123', '123123', 'https://www.freejpg.com.ar/asset/900/a3/a385/F100004703.jpg', '2023-09-13 00:00:00'),
-(12, 'asdasdasd', 'asdasd', 'https://www.freejpg.com.ar/asset/900/a3/a385/F100004703.jpg', '2023-09-13 00:00:00'),
-(15, 'asdasd', 'asdasd', 'https://www.freejpg.com.ar/asset/900/a3/a385/F100004703.jpg', '2023-09-13 00:00:00'),
-(16, 'asdas', 'asdasd', 'https://www.freejpg.com.ar/asset/900/a3/a385/F100004703.jpg', '2023-09-14 03:05:59'),
-(17, 'asdasd', 'asdasd', 'https://sergiomadrigal.com/wp-content/uploads/2014/01/blog_fisheye.jpg', '2023-09-14 03:18:39');
+INSERT INTO `foro` (`id`, `autor`, `publicacion`, `img`, `fecha`) VALUES
+(1, 'asdasd', 'asdads', 'https://getwallpapers.com/wallpaper/full/f/a/5/1025426-vertical-1920-x-1080-hd-wallpapers-1920x1080-macbook.jpg', '2023-09-14 14:32:34'),
+(2, 'asdasd', 'aasda', 'https://www.freejpg.com.ar/asset/900/a3/a385/F100004703.jpg', '2023-09-14 14:42:24');
 
 --
 -- Índices para tablas volcadas
@@ -65,7 +61,7 @@ ALTER TABLE `foro`
 -- AUTO_INCREMENT de la tabla `foro`
 --
 ALTER TABLE `foro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

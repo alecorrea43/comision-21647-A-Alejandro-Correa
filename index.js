@@ -60,6 +60,9 @@ if(borrarPublicacion){
   }
 
 });
+app.get("/editar", function (req, res) {
+  res.render("editar");
+});
 // function asyncrona de editar por id
 //renderisa editar .get va a mostrar los valor nuevos por url
 app.get('/editar/:id', async function (req, res) {
