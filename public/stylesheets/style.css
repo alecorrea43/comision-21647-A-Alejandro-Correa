@@ -1,4 +1,12 @@
 
+.card{
+  color: #fff;
+  background-color: rgb(157, 196, 231);
+}
+
+.btn{
+  font-weight: 500;
+}
 th{
     white-space:nowrap;
   }
