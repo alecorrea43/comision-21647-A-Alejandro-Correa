@@ -9,3 +9,8 @@
 th{
     white-space:nowrap;
   }
+  img{
+    width: 100%;
+    height: 400px;
+    
+  }
